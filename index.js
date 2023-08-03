@@ -9,10 +9,10 @@ const port = process.env.SERVER_PORT
 app.use(cors())
 
 app.use(express.json())
-app.use('/api', require('./api/user/Router'))
-app.use('/api', require('./api/product/Router'))
-app.use('/api', require('./api/category/Router'))
-app.use('/api', require('./api/brand/Router'))
+app.use('/api', require('./api/user/router'))
+app.use('/api', require('./api/product/router'))
+app.use('/api', require('./api/category/router'))
+app.use('/api', require('./api/brand/router'))
 
 
 app.listen(port, () => {

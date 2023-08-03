@@ -1,5 +1,5 @@
 require("dotenv").config();
-const Category = require("./Model");
+const Category = require("./model");
 const { connect } = require("mongoose");
 
 // create category

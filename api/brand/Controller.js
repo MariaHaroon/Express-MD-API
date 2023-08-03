@@ -1,5 +1,5 @@
 require("dotenv").config();
-const Brand = require("./Model");
+const Brand = require("./model");
 const { connect } = require("mongoose");
 
 // create Brand

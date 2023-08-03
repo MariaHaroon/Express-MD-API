@@ -1,5 +1,5 @@
 require("dotenv").config();
-const User = require("./Model");
+const User = require("./model");
 const { connect } = require("mongoose");
 const { hash, compare } = require("bcryptjs");
 const { sign } = require("jsonwebtoken");

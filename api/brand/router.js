@@ -5,7 +5,7 @@ const { AddBrand,AllBrands,BrandById,UpdateBrand,DeleteBrand } = require('./cont
 
 router.post('/addbrand', AddBrand)
 router.get('/allbrands', AllBrands)
-router.get('/brandbyid', BrandById)
+router.get('/brandbyid/:_id', BrandById)
 router.put('/updatebrand', UpdateBrand)
 router.delete('/deletebrand', DeleteBrand)
 

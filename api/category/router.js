@@ -5,7 +5,7 @@ const { AddCategory,AllCategories,CategoryById,UpdateCategory,DeleteCategory } =
 
 router.post('/addcategory', AddCategory)
 router.get('/allcategories', AllCategories)
-router.get('/categorybyid', CategoryById)
+router.get('/categorybyid/:_id', CategoryById)
 router.put('/updatecategory', UpdateCategory)
 router.delete('/deletecategory', DeleteCategory)
 

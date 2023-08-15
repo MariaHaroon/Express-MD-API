@@ -1,14 +1,13 @@
 const express = require('express')
-const app = express()
 require('dotenv').config()
-var cors = require('cors')
-
-
+const app = express()
 const port = process.env.SERVER_PORT
 
-app.use(cors())
+const cors = require('cors')
 
+app.use(cors())
 app.use(express.json())
+
 app.use('/api', require('./api/user/router'))
 app.use('/api', require('./api/product/router'))
 app.use('/api', require('./api/category/router'))

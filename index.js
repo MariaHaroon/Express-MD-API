@@ -13,7 +13,8 @@ app.use('/api', require('./api/user/router'))
 app.use('/api', require('./api/product/router'))
 app.use('/api', require('./api/category/router'))
 app.use('/api', require('./api/brand/router'))
-
+app.use('/api', require('./api/order/router'))
+app.use('/api', require('./api/mailer/router'))
 
 app.listen(port, () => {
   console.log(`Listening on port http://localhost:${port}`)

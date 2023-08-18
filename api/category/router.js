@@ -1,12 +1,13 @@
 const app = require('express')
 const router = app.Router()
-const { AddCategory,AllCategories,CategoryById,UpdateCategory,DeleteCategory } = require('./controller')
+const { AddCategory,AllCategories,UpdateCategory,DeleteCategory,CategoryById,CategoryByName } = require('./controller')
 
 
 router.post('/addcategory', AddCategory)
-router.get('/allcategories', AllCategories)
-router.get('/categorybyid/:_id', CategoryById)
 router.put('/updatecategory', UpdateCategory)
 router.delete('/deletecategory', DeleteCategory)
-
+router.get('/allcategories', AllCategories)
+router.get('/categorybyid/:_id', CategoryById) //params
+router.get('/categorybyname', CategoryByName) //query
+ 
 module.exports = router

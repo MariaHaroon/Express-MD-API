@@ -7,7 +7,7 @@ router.post('/addcategory', AddCategory)
 router.put('/updatecategory', UpdateCategory)
 router.delete('/deletecategory', DeleteCategory)
 router.get('/allcategories', AllCategories)
-router.get('/categorybyid/:_id', CategoryById) //params
-router.get('/categorybyname', CategoryByName) //query
+router.get('/categorybyid/:_id', CategoryById) ////xxxxparamsxxxx
+router.get('/categorybyname/:name', CategoryByName) /////////query
  
 module.exports = router

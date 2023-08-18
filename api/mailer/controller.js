@@ -46,7 +46,7 @@ const sendFancyMail = (req, res) => {
 
     let response = {
         body: {
-            name: "Testing Mail",
+            name: "Order Details",
             intro: "Your Bill has Arrived!",
             table: {
                 data: [{

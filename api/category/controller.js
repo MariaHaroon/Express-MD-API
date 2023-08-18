@@ -2,37 +2,47 @@ require("dotenv").config();
 const Category = require("./model");
 const { connect } = require("mongoose");
 
-// add category
+// create category
 const AddCategory = async (req, res) => {
 
     const { CategoryName, CategoryImage } = req.body
 
-    try {
-        await connect(process.env.MONGO_URI)
-
-        const CheckDuplicate = await Category.exists({ CategoryName })
-
-        if (CheckDuplicate) {
-
-            res.json({
-                message: "Category Already Exists"
-            })
-
-        } else {
-
-            await Category.create({ CategoryName, CategoryImage })
-
-            res.json({
-                message: "Category Added Successfully"
-            })
-        }
-    }
-    catch (error) {
-        res.status(404).json({
-            message: error.message
+    if (!CategoryName || !CategoryImage) {
+        res.status(403).json({
+            message: "Invalid Values"
         })
     }
 
+    else {
+
+        try {
+            await connect(process.env.MONGO_URI)
+            const checkDuplicate = await Category.exists({ CategoryName: CategoryName })
+
+            if (checkDuplicate) {
+                res.json({
+                    message: "Category Already Exists"
+                })
+            }
+            else {
+                await Category.create({ CategoryName, CategoryImage })
+                const categories = await Category.find()
+
+                res.json({
+                    message: "Category Created Successfully",
+                    categories
+                })
+            }
+        }
+
+        catch (error) {
+            res.json({
+                message: error.message
+            })
+
+        }
+
+    }
 }
 
 // get all categories
@@ -91,15 +101,21 @@ const DeleteCategory = async (req, res) => {
     try {
         await connect(process.env.MONGO_URI)
         await Category.deleteOne({ _id })
+        const categories = await Category.find()
+
         res.json({
-            message: "Category Deleted Successfully"
+            message: "Category Deleted Successfully",
+            categories
         })
+
     }
+
     catch (error) {
-        res.status(404).json({
+        res.json({
             message: error.message
         })
     }
+
 
 }
 

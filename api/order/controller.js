@@ -44,7 +44,6 @@ const addOrders = async (req, res) => {
             const transporter = nodemailer.createTransport({
                 service: 'gmail',
                 auth: {
-                    // TODO: replace `user` and `pass` values from <https://forwardemail.net>
                     user: process.env.NODEMAILER_EMAIL,
                     pass: process.env.NODEMAILER_PASSWORD
                 }
@@ -56,17 +55,16 @@ const addOrders = async (req, res) => {
             var mailGenerator = new Mailgen({
                 theme: 'default',
                 product: {
-                    // Appears in header & footer of e-mails
-                    name: 'AA C',
-                    link: 'websitelink'
+                    name: 'Chocolate',
+                    link: 'https://mariaharoon.github.io/BQ-Assignment-01/'
                 }
             });
 
             await transporter.sendMail({
                 from: process.env.NODEMAILER_EMAIL, // sender address
                 to: customerEmail, // list of receivers
-                subject: "Hello ✔", // Subject line
-                text: "Hello world?", // plain text body
+                subject: "Order Placed", // Subject line
+                text: "Hello Dear Customer! We have received your order. It will be at your doorstep soon! ", // plain text body
                 html: mailGenerator.generate({
                     body: {
                         name: customerName,
@@ -87,7 +85,7 @@ const addOrders = async (req, res) => {
                 }), // html body
             });
             res.status(201).json({
-                message: "Order Place Successfully",
+                message: "Order Placed Successfully",
                 TrackingId: order._id
             })
         }

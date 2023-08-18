@@ -1,7 +1,7 @@
 const { Schema, model } = require('mongoose')
 
 
-const emailSchema = newSchema({
+const emailSchema = new Schema({
 
     subject: {
         type: String,
@@ -21,5 +21,5 @@ const emailSchema = newSchema({
         required: true
     }
 })
-const email = model('Email', emailSchema)
+const email = model('email', emailSchema)
 module.exports = email;

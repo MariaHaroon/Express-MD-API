@@ -73,14 +73,13 @@ const UpdateCategory = async (req, res) => {
     try {
         await connect(process.env.MONGO_URI)
 
-        await Category.findOneAndUpdate(filter, update, {
-            new: true
-        });
+        await Category.findOneAndUpdate
+        (filter, update, {new: true});
 
         const category = await Category.find()
 
         res.json({
-            message: "Success",
+            message: "Category Updated Successfully",
             category
         })
 
@@ -128,7 +127,7 @@ const CategoryById = async (req, res) => {
         await connect(process.env.MONGO_URI)
         const category = await Category.findOne({ _id })
         res.json({
-            category
+            category: category
         })
     }
     catch (error) {

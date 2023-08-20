@@ -14,5 +14,5 @@ const BrandSchema = new Schema(
     }
 )
 
-const Brand = model('Brand', BrandSchema)
+const Brand = model('brand', BrandSchema)
 module.exports = {Brand}

@@ -19,12 +19,12 @@ const FooterContact = () => (
               style={{
                 backgroundColor: '#fff',
                 borderRadius: '0',
-                border: '2px solid blue',
-                float: 'right'
+                border: '2px solid black',
+                float: 'center'
               }}
             >
               <a
-                href="https://mariaharoon.github.io/BQ-Assignment-01/"
+                href='https://github.com/MariaHaroon'
                 className="url"
                 target="_blank"
                 style={{ color: '#000', textDecoration: 'none' }}

@@ -7,9 +7,8 @@ export default function Cart() {
 
     const { cart_state, cart_dispatch } = useContext(CartContext)
     const { state, dispatch } = useContext(GlobalContext)
-    const total = cart_state.cart.reduce((accumulator, product) => accumulator + (roduct.price * product.quantity), 0)
+    const total = cart_state.cart.reduce((accumulator, product) => accumulator + (product.price * product.quantity), 0)
     const user = decodeToken(state.token)
-    //console.log(user)
     const checkout = () => {
         const payload = {
             items: cart_state.cart,
@@ -39,7 +38,7 @@ export default function Cart() {
                             </div>
                             <div className="col-md-8">
                                 <div className="card-body">
-                                    <h5 className="card-title">{val.productName} - {val.price} {val.priceUnit}</h5>
+                                    <h5 className="card-title">{val.productName} - {val.price}</h5>
                                     <p className="card-text">{val.description}
                                     </p>
                                     <p className="card-text">

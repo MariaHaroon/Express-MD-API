@@ -13,7 +13,7 @@ export default function ProductPage() {
 
     useEffect(() => {
         axios.get(`/api/productbyid/${_id}`)
-            .then(json => setProduct(json.data.products))
+            .then(json => setProduct(json.data.product))
             .catch(err => console.log(err))
     }, [])
 

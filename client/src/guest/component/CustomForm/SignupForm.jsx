@@ -44,7 +44,7 @@ export default function SignupForm() {
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                 />
-                <button className="flip-card__btn">Confirm!</button>
+                <button className="flip-card__btn">Get Started!</button>
             </form>
         </div>
     )

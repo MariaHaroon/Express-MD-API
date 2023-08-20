@@ -14,7 +14,7 @@ export default function Categories() {
     return (
         <div className="container my-5">
             <div className="text-center">
-                <h2>Category</h2>
+                <h1>Categories</h1>
                 <small className="text-secondary">Our variety of categories, Lorem, delepsa!</small>
             </div>
 

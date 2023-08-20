@@ -15,4 +15,4 @@ const BrandSchema = new Schema(
 )
 
 const Brand = model('brand', BrandSchema)
-module.exports = {Brand}
+module.exports = Brand

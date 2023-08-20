@@ -1,0 +1,298 @@
+/* .gradient-custom {
+    background: #667eea;
+    background: -webkit-linear-gradient(to right, rgba(102,126,234,0.5), rgba(87,47,127,0.5));
+    background: linear-gradient(to right, rgba(102,126,234,0.5), rgba(87,47,127,0.5))
+  } */
+/* @media (min-width: 768px) {
+    .gradient-form {
+        height: 100vh !important;
+    }
+} */
+/* 
+@media (min-width: 769px) {
+    .gradient-custom-2 {
+        border-top-right-radius: .3rem;
+        border-bottom-right-radius: .3rem;
+    }
+} */
+
+/* jsx
+<section className="h-100 gradient-form" style={{ backgroundColor: "#eee" }}>
+  <div className="container py-5 h-100">
+    <div className="row d-flex justify-content-center align-items-center h-100">
+      <div className="col-xl-10">
+        <div className="card rounded-3 text-black">
+          <div className="row g-0">
+            <div className="col-lg-6">
+              <div className="card-body p-md-5 mx-md-4">
+                <div className="text-center">
+                  <img
+                    src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/lotus.webp"
+                    style={{ width: 185 }}
+                    alt="logo"
+                  />
+                  <h4 className="mt-1 mb-5 pb-1">We are The Lotus Team</h4>
+                </div>
+                <form>
+                  <p>Please login to your account</p>
+                  <div className="form-outline mb-4">
+                    <input
+                      type="email"
+                      id="form2Example11"
+                      className="form-control"
+                      placeholder="Phone number or email address"
+                    />
+                    <label className="form-label" htmlFor="form2Example11">
+                      Username
+                    </label>
+                  </div>
+                  <div className="form-outline mb-4">
+                    <input
+                      type="password"
+                      id="form2Example22"
+                      className="form-control"
+                    />
+                    <label className="form-label" htmlFor="form2Example22">
+                      Password
+                    </label>
+                  </div>
+                  <div className="text-center pt-1 mb-5 pb-1">
+                    <button
+                      className="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3"
+                      type="button"
+                    >
+                      Log in
+                    </button>
+                    <a className="text-muted" href="#!">
+                      Forgot password?
+                    </a>
+                  </div>
+                  <div className="d-flex align-items-center justify-content-center pb-4">
+                    <p className="mb-0 me-2">Don't have an account?</p>
+                    <button type="button" className="btn btn-outline-danger">
+                      Create new
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <div className="col-lg-6 d-flex align-items-center gradient-custom-2">
+              <div className="text-white px-3 py-4 p-md-5 mx-md-4">
+                <h4 className="mb-4">We are more than just a company</h4>
+                <p className="small mb-0">
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                  laboris nisi ut aliquip ex ea commodo consequat.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+ */
+
+
+.wrapper {
+    --input-focus: ;
+    --font-color: #fff;
+    --font-color-sub: #fff;
+    --bg-color: #4d1f70;
+    --bg-color-alt: #733798;
+    --main-color: #9479b5;
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* align-items: center; */
+}
+
+/* switch card */
+.switch {
+    transform: translateY(-200px);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    width: 50px;
+    height: 20px;
+}
+
+.card-side::before {
+    position: absolute;
+    content: 'Log in';
+    left: -70px;
+    top: 0;
+    width: 100px;
+    text-decoration: underline;
+    color: var(--font-color);
+    font-weight: 600;
+}
+
+.card-side::after {
+    position: absolute;
+    content: 'Sign up';
+    left: 70px;
+    top: 0;
+    width: 100px;
+    text-decoration: none;
+    color: var(--font-color);
+    font-weight: 600;
+}
+
+.toggle {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    box-sizing: border-box;
+    border-radius: 5px;
+    border: 2px solid var(--main-color);
+    box-shadow: 4px 4px var(--main-color);
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--bg-colorcolor);
+    transition: 0.3s;
+}
+
+.slider:before {
+    box-sizing: border-box;
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 20px;
+    border: 2px solid var(--main-color);
+    border-radius: 5px;
+    left: -2px;
+    bottom: 2px;
+    background-color: var(--bg-color);
+    box-shadow: 0 3px 0 var(--main-color);
+    transition: 0.3s;
+}
+
+.toggle:checked+.slider {
+    background-color: var(--input-focus);
+}
+
+.toggle:checked+.slider:before {
+    transform: translateX(30px);
+}
+
+.toggle:checked~.card-side:before {
+    text-decoration: none;
+}
+
+.toggle:checked~.card-side:after {
+    text-decoration: underline;
+}
+
+/* card */
+
+.flip-card__inner {
+    width: 300px;
+    height: 350px;
+    position: relative;
+    background-color: transparent;
+    perspective: 1000px;
+    /* width: 100%;
+      height: 100%; */
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.toggle:checked~.flip-card__inner {
+    transform: rotateY(180deg);
+}
+
+.toggle:checked~.flip-card__front {
+    box-shadow: none;
+}
+
+.flip-card__front,
+.flip-card__back {
+    padding: 20px;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    background: lightgrey;
+    gap: 20px;
+    border-radius: 5px;
+    border: 2px solid var(--main-color);
+    box-shadow: 4px 4px var(--main-color);
+}
+
+.flip-card__back {
+    width: 100%;
+    transform: rotateY(180deg);
+}
+
+.flip-card__form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.title {
+    margin: 20px 0 20px 0;
+    font-size: 25px;
+    font-weight: 900;
+    text-align: center;
+    color: var(--main-color);
+}
+
+.flip-card__input {
+    width: 250px;
+    height: 40px;
+    border-radius: 5px;
+    border: 2px solid var(--main-color);
+    background-color: var(--bg-color);
+    box-shadow: 4px 4px var(--main-color);
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--font-color);
+    padding: 5px 10px;
+    outline: none;
+}
+
+.flip-card__input::placeholder {
+    color: #fff;
+    opacity: 0.8;
+}
+
+.flip-card__input:focus {
+    border: 2px solid var(--input-focus);
+}
+
+.flip-card__btn:active,
+.button-confirm:active {
+    box-shadow: 0px 0px var(--main-color);
+    transform: translate(3px, 3px);
+}
+
+.flip-card__btn {
+    margin: 20px 0 20px 0;
+    width: 120px;
+    height: 40px;
+    border-radius: 5px;
+    border: 2px solid var(--main-color);
+    background-color: var(--bg-color);
+    box-shadow: 4px 4px var(--main-color);
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--font-color);
+    cursor: pointer;
+}

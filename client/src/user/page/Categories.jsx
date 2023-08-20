@@ -7,7 +7,7 @@ export default function Categories() {
     const [category, setCategory] = useState([])
     useEffect(() => {
         axios.get(`${AppRoute}api/allcategories`)
-            .then(json => setCategory(json.data.categories))
+            .then(json => setCategory(json.data.category))
             .catch(err => console.log(err))
     }, [])
 
@@ -20,7 +20,7 @@ export default function Categories() {
 
             <div className="row my-5">
                 {
-                    category.map((val, key) => <UserCards key={key} image={val.CategoryImage} name={val.CategoryName} />)
+                    category?.map((val, key) => <UserCards key={key} image={val.CategoryImage} name={val.CategoryName} />)
                 }
 
             </div>

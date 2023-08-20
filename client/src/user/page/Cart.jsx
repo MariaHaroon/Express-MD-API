@@ -32,7 +32,7 @@ export default function Cart() {
 
             <div className="p-5 rounded bg-dark">
                 {
-                    cart_state.cart.map((val, key) => <div className="card mb-3 w-100" key={key}>
+                    cart_state.cart?.map((val, key) => <div className="card mb-3 w-100" key={key}>
                         <div className="row g-0">
                             <div className="col-md-2 d-flex justify-content-center align-items-center">
                                 <img src={val.thumbnail} style={{ height: '10vh', objectFit: 'contain' }} className="img-fluid rounded-start" alt={val.productName} />

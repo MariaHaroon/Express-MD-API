@@ -26,13 +26,15 @@ function ProductModal() {
 
     const handleClose = () => setShow(false);
     const handleShow = () => {
-        axios.get(`${AppRoute}api/allbrands`).then(json => {
-            setBrandVal(json.data.brands)
-            axios.get(`${AppRoute}api/allcategories`).then(json => {
-                setCategoryVal(json.data.categories)
-                setShow(true);
-            })
-        }).catch(err => console.log(err))
+        axios.get(`${AppRoute}api/allbrands`)
+            .then(json => {
+                setBrandVal(json.data.brandVal)
+                axios.get(`${AppRoute}api/allcategories`)
+                .then(json => {
+                    setCategoryVal(json.data.CategoryVal)
+                    setShow(true);
+                })
+            }).catch(err => console.log(err))
 
     }
 
@@ -64,7 +66,7 @@ function ProductModal() {
                                 description
 
                             }
-                            
+
                             axios.post(`${AppRoute}api/addproduct`, payload).then((json) => {
                                 console.log(json.data)
                                 setShow(false)
@@ -121,7 +123,7 @@ function ProductModal() {
                             <small className="text-secondary">Double Click on Image to Delete.</small>
                             <div className="mt-2 d-flex gap-2 align-items-center">
                                 {
-                                    images.map((val, key) =>
+                                    images?.map((val, key) =>
                                         <div key={key} className="bg-light border rounded col-md-1"
                                             onDoubleClick={() => setImages(images.filter((img) => img != val))}>
                                             <img style={{ height: '10vh', cursor: 'pointer', objectFit: 'contain' }}
@@ -146,7 +148,7 @@ function ProductModal() {
                                         <Form.Select aria-label="Please Select a Brand" onChange={(e) => setBrand(e.target.value)}>
                                             <option>Please Select a Brand</option>
                                             {
-                                                brandVal.map((val, key) => <option key={key} value={val.BrandName}>{val.BrandName}</option>)
+                                                brandVal?.map((val, key) => <option key={key} value={val.BrandName}>{val.BrandName}</option>)
                                             }
                                         </Form.Select>
                                     </FloatingLabel>
@@ -158,7 +160,7 @@ function ProductModal() {
                                         <Form.Select aria-label="Please Select a Category" onChange={(e) => setCategory(e.target.value)}>
                                             <option>Please Select a Category</option>
                                             {
-                                                CategoryVal.map((val, key) => <option key={key} value={val.CategoryName}>{val.CategoryName}</option>)
+                                                CategoryVal?.map((val, key) => <option key={key} value={val.CategoryName}>{val.CategoryName}</option>)
                                             }
                                         </Form.Select>
                                     </FloatingLabel>

@@ -21,7 +21,7 @@ export default function Products() {
 
             <div className="row my-5">
                 {
-                    products.map((val, key) => <UserCards key={key} image={val.thumbnail} name={val.productName} url={`/products/${val._id}`} />)
+                    products?.map((val, key) => <UserCards key={key} image={val.thumbnail} name={val.productName} url={`/products/${val._id}`} />)
                 }
                 <div>
                     <small className="text-secondary">Or filter products by any category you like!</small>

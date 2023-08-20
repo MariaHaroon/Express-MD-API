@@ -21,7 +21,7 @@ export default function Brands() {
 
             <div className="row my-5">
                 {
-                    brandpro.map((val, key) => <UserCards key={key} image={val.BrandImage} name={val.BrandName} />)
+                    brandpro?.map((val, key) => <UserCards key={key} image={val.BrandImage} name={val.BrandName} />)
                 }
 
             </div>

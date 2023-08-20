@@ -23,7 +23,7 @@ export default function Brand() {
 
             <div className="row my-5">
                 {
-                    brands.map((val, key) => <GuestCards key={key} image={val.BrandImage} name={val.BrandName} />)
+                    brands?.map((val, key) => <GuestCards key={key} image={val.BrandImage} name={val.BrandName} />)
                 }
 
             </div>

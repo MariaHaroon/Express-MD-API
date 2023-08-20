@@ -2,11 +2,11 @@ import React, { useEffect, useState } from 'react'
 import GuestCards from './GuestCards'
 import axios from 'axios'
 
-export default function categories() {
+export default function Categories() {
     const [category, setCategory] = useState([])
     useEffect(() => {
         axios.get('/api/allcategories')
-            .then(json => setCategory(json.data.categories))
+            .then(json => setCategory(json.data.category))
             .catch(err => alert(err.message))
 
     }, [])
@@ -20,7 +20,7 @@ export default function categories() {
 
             <div className="row my-5">
                 {
-                    category.map((val, key) => <GuestCards key={key} image={val.CategoryImage} name={val.CategoryName} />)
+                    category?.map((val, key) => <GuestCards key={key} image={val.CategoryImage} name={val.CategoryName} />)
                 }
 
             </div>

@@ -21,7 +21,7 @@ export default function Brands() {
 
             <div className="row my-5">
                 {
-                    brands.map((val, key) => <UserCards key={key} image={val.BrandImage} name={val.BrandName} />)
+                    brands?.map((val, key) => <UserCards key={key} image={val.BrandImage} name={val.BrandName} />)
                 }
 
             </div>

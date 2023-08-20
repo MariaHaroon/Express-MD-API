@@ -2,7 +2,7 @@ import React, { useEffect, useContext } from 'react'
 import { FiHome } from 'react-icons/fi'
 import { BiCategoryAlt } from 'react-icons/bi'
 import { Link, useLocation } from 'react-router-dom'
-import { GlobalContext } from '../../Context/context'
+import { GlobalContext } from '../../context/context'
 export default function Sidebar() {
 
     const location = useLocation()

@@ -20,7 +20,7 @@ export default function Categories() {
 
             <div className="row my-5">
                 {
-                    categorypro.map((val, key) => <UserCards key={key} image={val.CategoryImage} name={val.CategoryName} />)
+                    categorypro?.map((val, key) => <UserCards key={key} image={val.CategoryImage} name={val.CategoryName} />)
                 }
 
             </div>

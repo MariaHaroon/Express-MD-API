@@ -9,7 +9,7 @@ export default function Products() {
     const [Product, setProduct] = useState([])
     useEffect(() => {
         axios.get(`${AppRoute}api/allproducts`)
-            .then(json => setProduct(json.data.products))
+            .then(json => setProduct(json.data.Product))
             .catch(err => console.log(err.message))
     })
 
@@ -53,7 +53,7 @@ export default function Products() {
                     </thead>
                     <tbody>
                         {
-                            Product.map((val, key) =>
+                            Product?.map((val, key) =>
                                 <tr key={key}>
                                     <td><img src={val.thumbnail} className='img-fluid rounded-circle border border-secondary' style={{ height: '10vh', aspectRatio: 1 / 1, objectFit: 'contain' }} alt="" srcSet="" /></td>
                                     <td>{val.productName}</td>

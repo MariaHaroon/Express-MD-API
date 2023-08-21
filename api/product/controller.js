@@ -5,7 +5,7 @@ const { connect } = require("mongoose");
 // add product
 const AddProduct = async (req, res) => {
 
-    const { productName,thumbnail,description,category,price,rating } = req.body
+    const { productName,thumbnail,description,category,brand,images,price,rating } = req.body
 
     try {
         await connect(process.env.MONGO_URI)
@@ -20,7 +20,7 @@ const AddProduct = async (req, res) => {
 
         } else {
 
-            await Product.create({ productName,thumbnail,description,category,price,rating })
+            await Product.create({ productName,thumbnail,description,category,brand,images,price,rating})
 
             res.json({
                 message: "Product Added Successfully"
@@ -55,7 +55,7 @@ const AllProducts = async (req, res) => {
 
 // update product
 const UpdateProduct = async (req, res) => {
-    const { productName,thumbnail,description,category,price,rating,_id } = req.body
+    const { productName,thumbnail,description,category,brand,images,price,rating,_id } = req.body
 
     const filter = {_id}
     const update = {productName,thumbnail,description,category,price,rating}

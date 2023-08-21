@@ -8,7 +8,7 @@ export default function GuestNav() {
     return (
         <Navbar expand="lg" className="bg-body-tertiary">
             <Container>
-                <Link className='navbar-brand' to='/'>Sweetest Topping</Link>
+                <Link className='navbar-brand' to='/'>my Topping</Link>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="ms-auto">

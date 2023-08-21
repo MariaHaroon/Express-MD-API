@@ -23,6 +23,14 @@ export default function LoginForm() {
                     token: json.data.token
                 })
 
+// through navigate
+// if (result.data.success) {
+//  Navigate('/profile')
+//             }
+
+
+
+                
             })
             .catch(err => console.log(err))
 

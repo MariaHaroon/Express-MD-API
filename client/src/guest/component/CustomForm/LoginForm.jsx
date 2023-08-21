@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react'
 import axios from 'axios'
 import Cookies from 'js-cookie'
 import { GlobalContext } from '../../../context/context'
+import { Navigate} from "react-router-dom"
 
 export default function LoginForm() {
 
@@ -24,7 +25,7 @@ export default function LoginForm() {
                 })
 
 // through navigate
-// if (result.data.success) {
+// if (result.data === "Success") {
 //  Navigate('/profile')
 //             }
 
